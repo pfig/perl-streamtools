@@ -108,11 +108,11 @@ false), and what the connection timeout should be (timeout => 30, defaults to
 Get the version of a Streamtools service:
 
     my $version = $st->version;
-    my $response = $version->request;
+    my $value = $version->request;
 
 Alternatively, of course,
 
-    my $version_response = $st->version->request
+    my $version = $st->version->request;
 
 =cut
 
@@ -124,7 +124,22 @@ sub version {
 
 =head2 library
 
+Get the block library of a Streamtools service:
+
+    my $library = $st->library;
+    my $hashref = $library->request;
+
+Or
+
+    my $library = $st->library->request;
+
 =cut
+
+sub library {
+    my $self = shift;
+
+    return Streamtools::API::Streamtools::Library->new(_st => $self);
+}
 
 # No user-serviceable parts below.
 
