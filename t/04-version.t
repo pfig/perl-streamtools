@@ -28,6 +28,6 @@ isa_ok($v, 'Streamtools::API::BaseRequest');
 isa_ok($v, 'Streamtools::API::Streamtools::Version');
 
 ok($v->method eq 'GET', 'Method is correctly set');
-ok($v->path eq 'version', 'Method is correctly set');
+ok($v->path eq 'version', 'Path is correctly set');
 
 ok($st->version->request eq "0.2.8", 'Correct value decoded');
