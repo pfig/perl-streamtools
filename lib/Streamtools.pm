@@ -108,11 +108,11 @@ false), and what the connection timeout should be (timeout => 30, defaults to
 Get the version of a Streamtools service:
 
     my $version = $st->version;
-    my $response = $version->request;
+    my $value = $version->request;
 
 Alternatively, of course,
 
-    my $version_response = $st->version->request
+    my $version = $st->version->request;
 
 =cut
 
