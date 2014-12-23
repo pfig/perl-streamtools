@@ -124,7 +124,22 @@ sub version {
 
 =head2 library
 
+Get the block library of a Streamtools service:
+
+    my $library = $st->library;
+    my $hashref = $library->request;
+
+Or
+
+    my $library = $st->library->request;
+
 =cut
+
+sub library {
+    my $self = shift;
+
+    return Streamtools::API::Streamtools::Library->new(_st => $self);
+}
 
 # No user-serviceable parts below.
 
