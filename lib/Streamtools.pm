@@ -141,6 +141,25 @@ sub library {
     return Streamtools::API::Streamtools::Library->new(_st => $self);
 }
 
+=head2 export
+
+Get the current pattern in a Streamtools service:
+
+    my $export = $st->export;
+    my $hashref = $export->request;
+
+Or
+
+    my $export = $st->export->request;
+
+=cut
+
+sub export {
+    my $self = shift;
+
+    return Streamtools::API::Streamtools::Export->new(_st => $self);
+}
+
 # No user-serviceable parts below.
 
 Readonly::Scalar my $KEEP_ALIVE_CACHESIZE => 10;
